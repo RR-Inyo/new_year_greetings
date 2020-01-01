@@ -67,7 +67,7 @@ def update(i):
     yw2 = -AMPLITUDE * ampmod * np.abs(np.sin(xw / LIMIT * NWAVES - delta - np.deg2rad(120))) - SEPARATION
     yw3 = -AMPLITUDE * ampmod * np.abs(np.sin(xw / LIMIT * NWAVES + delta + np.deg2rad(120))) - 2 * SEPARATION
 
-    # Plotting: Waves
+    ## Plotting: Waves
     ax.plot(xw, yw1, color = 'mediumblue', lw = LINE_WIDTH, alpha = ALPHA)
     ax.fill_between(xw, yw1, -LIMIT, color = 'royalblue', lw = LINE_WIDTH, alpha = ALPHA / 2)
     ax.plot(xw, yw2, color = 'mediumblue', lw = LINE_WIDTH, alpha = ALPHA)
