@@ -23,6 +23,7 @@ AMPLITUDE = 0.15
 SEPARATION = 1.5
 NWAVES = 10
 NMOD = 5
+AMPMOD_OFFSET = 1.7
 TEXT_HEIGHT = 3
 TEXT_SIZE = 35
 TEXT_ALPHA = 0.9
@@ -60,7 +61,7 @@ def update(i):
 
     ## Data: Waves
     delta = 2 * np.pi * i / NFRAMES
-    ampmod = 1.7 + np.cos(NMOD * 2 * np.pi * i / NFRAMES)
+    ampmod = AMPMOD_OFFSET + np.cos(NMOD * 2 * np.pi * i / NFRAMES)
     xw = np.arange(-LIMIT, LIMIT, LIMIT / RESOLUTION)
     yw1 = -AMPLITUDE * ampmod * np.abs(np.sin(xw / LIMIT * NWAVES + delta))
     yw2 = -AMPLITUDE * ampmod * np.abs(np.sin(xw / LIMIT * NWAVES - delta - np.deg2rad(120))) - SEPARATION
